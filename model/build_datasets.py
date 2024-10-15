@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/root/anaconda3/envs/pix2code/bin python
 from __future__ import print_function
 from __future__ import absolute_import
 __author__ = 'Tony Beltramelli - www.tonybeltramelli.com'
@@ -36,6 +36,9 @@ for f in os.listdir(input_path):
 
 evaluation_samples_number = len(paths) / (distribution + 1)
 training_samples_number = evaluation_samples_number * distribution
+
+evaluation_samples_number = int(evaluation_samples_number+0.5)
+training_samples_number = int(training_samples_number+0.5)
 
 assert training_samples_number + evaluation_samples_number == len(paths)
 
